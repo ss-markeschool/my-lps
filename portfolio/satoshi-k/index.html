@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satoshi Kaneko | ポートフォリオ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Shippori Mincho"', 'serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a',    /* slate-900 */
+                        secondary: '#475569',  /* slate-600 */
+                        accent: '#0d9488',     /* teal-600 */
+                        accentLight: '#f0fdfa',/* teal-50 */
+                        bgLight: '#f8fafc',    /* slate-50 */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            overflow-x: hidden;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Gradients */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #0d9488, #0369a1);
+        }
+        
+        /* Details/Summary animation */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        
+        .skill-tag {
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.1), 0 2px 4px -1px rgba(13, 148, 136, 0.06);
+            border-color: #0d9488;
+            color: #0d9488;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-serif font-bold text-xl text-primary tracking-wider">
+                    Satoshi Kaneko
+                </div>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-secondary">
+                    <a href="#story" class="hover:text-accent transition-colors">ストーリー</a>
+                    <a href="#skills" class="hover:text-accent transition-colors">強み・スキル</a>
+                    <a href="#works" class="hover:text-accent transition-colors">担当業務</a>
+                    <a href="#portfolio" class="hover:text-accent transition-colors">実績・リンク</a>
+                </nav>
+                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-5 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-accent hover:bg-teal-700 transition-colors">
+                    お問い合わせ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 lg:pt-32 lg:pb-32 px-4 sm:px-6 relative overflow-hidden">
+        <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-accentLight rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10" data-aos="fade-up">
+            
+            <!-- Profile Image -->
+            <div class="mb-6 flex justify-center">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg bg-slate-100 flex-shrink-0">
+                    <img src="PROF_SK-BlueShirtIST_260402.png" alt="Satoshi Kaneko" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23cbd5e1\'%3E%3Cpath d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/%3E%3C/svg%3E';">
+                </div>
+            </div>
+
+            <span class="inline-block py-1 px-3 rounded-full bg-teal-100 text-teal-800 text-xs font-bold tracking-widest mb-6">BUSINESS PARTNER & MARKETER</span>
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-primary mb-8">
+                「これ、お願いします…」<br>
+                <span class="text-gradient inline-block mt-3 sm:mt-4">この一言を引き出す事業の右腕</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-secondary leading-relaxed mb-10 max-w-3xl mx-auto">
+                マーケティング、行動心理、AIを駆使し、見込み客を丁寧にあなたのビジネスへ導きます。<br class="hidden sm:block">
+                事業を支える裏方全般をお任せください。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#portfolio" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full text-white bg-primary hover:bg-slate-800 transition-colors shadow-lg">
+                    制作実績を見る
+                </a>
+                <a href="#story" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full text-primary bg-white border border-slate-200 hover:bg-slate-50 transition-colors shadow-sm">
+                    私のストーリー
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="font-serif text-3xl font-bold text-primary mb-6">集客の壁と、329冊の学び。</h2>
+                    <div class="space-y-5 text-secondary leading-relaxed">
+                        <p>
+                            今の会社に勤める前までは主に営業職（セールス）をしていました。その後、創業メンバーとして今の会社に参画させてもらったものの、<strong>最大の課題は「集客」</strong>でした。正直なところ、最初はなかなかうまくいきませんでした。
+                        </p>
+                        <p>
+                            そんな時、がむしゃらに学んだのがマーケティングです。ダイレクトレスポンスマーケティング、行動心理、心理学だけでなく、以前に学んだNLPもやり直し、ビジネス関連や自己啓発、さらにはレイキヒーリングや量子力学的な考え方など、<strong>計329冊もの本を読み漁りました。</strong>
+                        </p>
+                        <p>
+                            学んだことを日々の業務で片っ端から実践し、試行錯誤を繰り返す中で、ある日お客様からこう言われました。
+                        </p>
+                        <blockquote class="border-l-4 border-accent pl-4 py-2 my-6 text-xl font-serif text-primary italic bg-slate-50 rounded-r-lg">
+                            「これ、お願いします…」
+                        </blockquote>
+                        <p>
+                            その瞬間、「来たな」と感じました。向こうから「申し込みたい」と言われた瞬間に、自分のやってきた方向は間違っていなかったと確信したのです。結果として、<strong>2日間のセールスで約220万円の成果</strong>に結びつけるビジネス力も身につきました。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-accentLight rounded-2xl p-8 lg:p-10 relative" data-aos="fade-left">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-accent rounded-full opacity-10"></div>
+                    <h3 class="font-serif text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                        <i class="ph-fill ph-lightbulb text-accent text-3xl"></i>
+                        実践の中で気づいた5つの真理
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                            <i class="ph-bold ph-check-circle text-accent mt-1"></i>
+                            <span class="text-secondary font-medium">自分が役に立ちたい人を明確にすること</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                            <i class="ph-bold ph-check-circle text-accent mt-1"></i>
+                            <span class="text-secondary font-medium">役に立てることが相手に求められるものであること</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                            <i class="ph-bold ph-check-circle text-accent mt-1"></i>
+                            <span class="text-secondary font-medium">見込み客を丁寧に自分のビジネスまで連れてくること</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                            <i class="ph-bold ph-check-circle text-accent mt-1"></i>
+                            <span class="text-secondary font-medium">課題の解決は、クライアントの人生を豊かにするものであること</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                            <i class="ph-bold ph-check-circle text-accent mt-1"></i>
+                            <span class="text-secondary font-medium">成果は後から付いてくるもの</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Skills Section -->
+    <section id="skills" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-3xl font-bold text-primary mb-4">ご提供できるコアスキル</h2>
+                <p class="text-secondary">あなたから買いたいと言われる仕組みとストーリーを創り上げます。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-accentLight text-accent rounded-xl flex items-center justify-center text-3xl mb-6">
+                        <i class="ph ph-chats-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">コンセプト構築・ヒアリング</h3>
+                    <p class="text-secondary text-sm leading-relaxed">
+                        未来創造ヒアリング＆カウンセリングを通じて、お役に立てることから作るあなたの強固なコンセプトを構築します。
+                    </p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-accentLight text-accent rounded-xl flex items-center justify-center text-3xl mb-6">
+                        <i class="ph ph-book-open-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">マイストーリー＆ライティング</h3>
+                    <p class="text-secondary text-sm leading-relaxed">
+                        「あなたから買いたい」と言われるマイストーリーを作成。価値がしっかり伝わるブログ記事やLPの執筆を行います。
+                    </p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-accentLight text-accent rounded-xl flex items-center justify-center text-3xl mb-6">
+                        <i class="ph ph-trend-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">成果を上げるセールスシナリオ</h3>
+                    <p class="text-secondary text-sm leading-relaxed">
+                        2日間のセールスで約220万円の成果を上げた実績に基づく、見込み客を自然に導くシナリオ設計と苦にならないSNS導線を提供します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role & Responsibilities Section -->
+    <section id="works" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-3xl font-bold text-primary mb-4">運営責任者としての役割</h2>
+                <p class="text-secondary">事業を根底から支える、裏方業務全般のマネジメント経験。</p>
+            </div>
+
+            <div class="bg-primary text-white rounded-3xl p-8 sm:p-12 overflow-hidden relative shadow-xl" data-aos="fade-up">
+                <div class="absolute top-0 right-0 opacity-10 transform translate-x-1/4 -translate-y-1/4">
+                    <i class="ph-fill ph-circles-four text-9xl"></i>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 relative z-10">
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-accent text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">レイキヒーリングアカデミー</h4>
+                            <p class="text-slate-300 text-sm">学べるアカデミーの運営責任者</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-accent text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">心の浄化講座</h4>
+                            <p class="text-slate-300 text-sm">人生を好転させる講座（ジャーナリング）運営責任者</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-accent text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">量子力学的生活の始め方講座</h4>
+                            <p class="text-slate-300 text-sm">講座の運営責任者</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-accent text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">カウンセリングサービス</h4>
+                            <p class="text-slate-300 text-sm">心のケア・キャリアカウンセリング事業責任者</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 md:col-span-2 pt-4 border-t border-slate-700">
+                        <i class="ph-fill ph-desktop text-accent text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">IT・システム管理＆AI活用</h4>
+                            <p class="text-slate-300 text-sm">上記運営に必要なIT、システム管理、AI活用などのサポート業務全般</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasks & Details Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12" data-aos="fade-up">
+                <h2 class="font-serif text-3xl font-bold text-primary mb-4">具体的な実務スキル・業務詳細</h2>
+                <p class="text-secondary">戦略立案からデザイン作成、システム構築まで、一気通貫で対応可能です。</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10">
+                <!-- Group 1 -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="font-bold text-primary mb-4 flex items-center gap-2 border-b border-slate-200 pb-2">
+                        <i class="ph ph-strategy text-accent text-xl"></i> 企画・設計・運営
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">コンセプト設計</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">SNS導線設計</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">フロントエンド企画〜契約</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">講座テキスト企画・作成</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">認定講師養成カリキュラム企画運営</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">各事業の運営事務全般</span>
+                    </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-bold text-primary mb-4 flex items-center gap-2 border-b border-slate-200 pb-2">
+                        <i class="ph ph-pen-nib text-accent text-xl"></i> 制作・コンテンツ・デザイン
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">投稿ネタ作成</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">メルマガ企画・編集・構成</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">バナー制作 (Canva等)</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">提案資料企画・作成</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">YouTube台本企画・編集</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">YouTubeライブ用スライド作成</span>
+                    </div>
+                </div>
+
+                <!-- Group 3 -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-bold text-primary mb-4 flex items-center gap-2 border-b border-slate-200 pb-2">
+                        <i class="ph ph-code text-accent text-xl"></i> システム・メディア構築管理
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">HP/WordPress立ち上げ・管理</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">アメブロ/NOTE立ち上げ・管理</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">YouTubeチャンネル立ち上げ・管理</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">決済システム設定・管理 (Stripe)</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">メルマガシステム設定 (マイスピー)</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-secondary shadow-sm cursor-default">社内IT管理運営</span>
+                    </div>
+                </div>
+
+                <!-- Group 4 (AI Highlight) -->
+                <div data-aos="fade-up" data-aos-delay="400" class="bg-gradient-to-br from-teal-50 to-blue-50 p-6 rounded-2xl border border-teal-100">
+                    <h3 class="font-bold text-accent mb-4 flex items-center gap-2">
+                        <i class="ph-fill ph-magic-wand text-xl"></i> 最新AIを活用した圧倒的スピードと質
+                    </h3>
+                    <p class="text-sm text-secondary mb-3">約1年前から、AIと共に以下の業務を効率的かつ高品質に構築しています。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">コンセプト設計</span>
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">SNS導線設計</span>
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">投稿ネタ・メルマガ作成</span>
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">バナーデザイン</span>
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">提案スライド</span>
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">ショート動画</span>
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">LP構成</span>
+                        <span class="px-2 py-1 bg-white/60 text-accent border border-teal-200 rounded text-xs font-medium">説明会・個別相談導線設計</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Links Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-3xl font-bold text-primary mb-4">制作・運営実績</h2>
+                <p class="text-secondary">立ち上げから運営・管理まで一貫して携わっているメディアやLPの一部です。</p>
+            </div>
+
+            <!-- Websites -->
+            <div class="mb-8" data-aos="fade-up">
+                <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                    <i class="ph-fill ph-globe text-accent"></i> ホームページ (WordPress)
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="https://healingheart-reikiacademy.com" target="_blank" class="block p-4 border border-slate-200 rounded-xl hover:border-accent hover:shadow-md transition-all group">
+                        <div class="font-medium text-primary group-hover:text-accent transition-colors truncate">ヒーリングハート 公式HP</div>
+                        <div class="text-xs text-slate-400 truncate mt-1">healingheart-reikiacademy.com</div>
+                    </a>
+                    <a href="https://floweressence.tokyo" target="_blank" class="block p-4 border border-slate-200 rounded-xl hover:border-accent hover:shadow-md transition-all group">
+                        <div class="font-medium text-primary group-hover:text-accent transition-colors truncate">フラワーエッセンス東京 公式</div>
+                        <div class="text-xs text-slate-400 truncate mt-1">floweressence.tokyo</div>
+                    </a>
+                    <a href="https://allsupport-center.co.jp" target="_blank" class="block p-4 border border-slate-200 rounded-xl hover:border-accent hover:shadow-md transition-all group">
+                        <div class="font-medium text-primary group-hover:text-accent transition-colors truncate">(株)オールサポートセンター 公式</div>
+                        <div class="text-xs text-slate-400 truncate mt-1">allsupport-center.co.jp</div>
+                    </a>
+                    <a href="https://online.allsupport-center.co.jp" target="_blank" class="block p-4 border border-slate-200 rounded-xl hover:border-accent hover:shadow-md transition-all group">
+                        <div class="font-medium text-primary group-hover:text-accent transition-colors truncate">(株)オールサポートセンター オンライン販売</div>
+                        <div class="text-xs text-slate-400 truncate mt-1">online.allsupport-center.co.jp</div>
+                    </a>
+                    <a href="https://universal-photoagency.com" target="_blank" class="block p-4 border border-slate-200 rounded-xl hover:border-accent hover:shadow-md transition-all group">
+                        <div class="font-medium text-primary group-hover:text-accent transition-colors truncate">ユニバーサルフォトエージェンシー 公式</div>
+                        <div class="text-xs text-slate-400 truncate mt-1">universal-photoagency.com</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Landing Pages (Accordion) -->
+            <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="cursor-pointer p-5 font-bold text-primary flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-file-html text-accent text-xl"></i>
+                            ランディングページ制作実績 (全14件を表示)
+                        </div>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-secondary">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="p-5 border-t border-slate-100 bg-slate-50">
+                        <ul class="grid sm:grid-cols-2 gap-y-3 gap-x-6 text-sm">
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_mailletter/pt02a26/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> メルマガ登録</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/guide_kikaku/ikr03a26/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> イベント企画の案内</a></li>
+                            <li><a href="https://healingheart-reikiacademy.com/ttr-lptv/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> レイキ講座の体験会＆個別相談会</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/guide_reikitrial/lp01a26/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> レイキ講座の体験会＆個別相談会</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/guide_reikitrial/vl01d26/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> レイキ講座の体験会＆個別相談会</a></li>
+                            <li><a href="https://healingheart-reikiacademy.com/ttr-lpsi/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> セルフイメージ講座の説明会＆個別相談会</a></li>
+                            <li><a href="https://healingheart-reikiacademy.com/tpkr-lp/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 心のケア講座の説明会＆個別相談会</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_ryouseika/apprsh01k9fula01/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 量子力学的系の説明会＆個別相談会（ショート動画付）</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_lifetotonoe/lt02a26a/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 心身を整えるコンテンツの説明会＆個別相談会A</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_lifetotonoe/lt02a26b/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 心身を整えるコンテンツの説明会＆個別相談会B</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_lifetotonoe/applte02/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 心身を整えるコンテンツの説明会＆個別相談会C</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_lifemove/applmt01dk7d01/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 人生を動かす系の説明会＆個別相談会A</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_lifemove/applmt01d/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 人生を動かす系の説明会＆個別相談会B</a></li>
+                            <li><a href="https://lead.healingheart-reikiacademy.com/opt_lifemove/applmt01ds7d7a01/" target="_blank" class="text-secondary hover:text-accent hover:underline flex items-center gap-2 truncate"><i class="ph ph-link"></i> 人生を動かす系の説明会＆個別相談会（ショート動画付）</a></li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Other Media -->
+            <div class="grid sm:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="ph-fill ph-youtube-logo text-red-500"></i> YouTube & Blogs
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.youtube.com/@MyHappyLife_SelfLove" target="_blank" class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:border-accent hover:shadow-sm transition-all group">
+                                <span class="font-medium text-secondary group-hover:text-accent">運営YouTubeチャンネル</span>
+                                <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ameblo.jp/healingheart-reikiac" target="_blank" class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:border-accent hover:shadow-sm transition-all group">
+                                <span class="font-medium text-secondary group-hover:text-accent">運営アメブロ</span>
+                                <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://note.com/sumikouenishi" target="_blank" class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:border-accent hover:shadow-sm transition-all group">
+                                <span class="font-medium text-secondary group-hover:text-accent">運営NOTE</span>
+                                <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="ph-fill ph-user-circle text-accent"></i> 個人の発信メディア
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.instagram.com/satoshikanekos/" target="_blank" class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:border-accent hover:shadow-sm transition-all group">
+                                <div class="flex items-center gap-2 text-secondary group-hover:text-accent"><i class="ph-fill ph-instagram-logo"></i> <span class="font-medium">Instagram</span></div>
+                                <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stand.fm/channels/63acc4137655e00c1cb11f70" target="_blank" class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:border-accent hover:shadow-sm transition-all group">
+                                <div class="flex items-center gap-2 text-secondary group-hover:text-accent"><i class="ph-fill ph-microphone-stage"></i> <span class="font-medium">stand.fm</span></div>
+                                <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://note.com/satoshikanekos" target="_blank" class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:border-accent hover:shadow-sm transition-all group">
+                                <div class="flex items-center gap-2 text-secondary group-hover:text-accent"><i class="ph-fill ph-article"></i> <span class="font-medium">個人NOTE</span></div>
+                                <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ss-markeschool.github.io/my-lps/appgud01af/" target="_blank" class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:border-accent hover:shadow-sm transition-all group">
+                                <div class="flex items-center gap-2 text-secondary group-hover:text-accent"><i class="ph-fill ph-identification-card"></i> <span class="font-medium">自己紹介LP</span></div>
+                                <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-24 bg-primary text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div class="max-w-3xl mx-auto px-4 relative z-10" data-aos="zoom-in">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
+                あなたの事業の「裏方」として、<br>一緒に未来を創りませんか？
+            </h2>
+            <p class="text-slate-300 text-lg mb-10">
+                集客・マーケティング・システム管理からデザイン制作まで。<br>
+                事業を加速させるためのパートナーをお探しなら、ぜひご相談ください。
+            </p>
+            <a href="mailto:your-email@example.com" class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-full text-primary bg-white hover:bg-accentLight transition-colors shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                <i class="ph-fill ph-envelope-simple mr-2 text-xl"></i> お仕事のご相談はこちら
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="text-sm">&copy; 2024 Satoshi Kaneko. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+            });
+        });
+    </script>
+</body>
+</html>
