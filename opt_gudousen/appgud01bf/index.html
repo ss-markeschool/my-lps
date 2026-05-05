@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【無料】頑張らなくても売れる導線設計 説明会＆個別相談会</title>
+    <meta name="description" content="頑張っているのに売れないのは、努力が足りないからじゃない。原因は「導線のズレ」と「視座のズレ」。整えれば現実は自然に動き出します。">
+    <link rel="icon" href="favicon_GUDS_sk260503a01.ico">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        // メインカラー：上品なゴールド（Amber系）
+                        brand: {
+                            50: '#fffbeb',  // クリーム色
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24', // 輝くゴールド
+                            500: '#f59e0b',
+                            600: '#b45309', // テキストが読みやすい濃いゴールド（ブラウン寄り）
+                            700: '#92400e',
+                            800: '#78350f',
+                            900: '#451a03',
+                        },
+                        // サブカラー：優しい薄ピンク（Rose系）
+                        pink: {
+                            50: '#fff5f7',
+                            100: '#ffe4e8',
+                            200: '#fecdd6',
+                            300: '#fea3b6',
+                            400: '#fd6f8e',
+                            500: '#f43f5e', // アクセントのピンク
+                            600: '#e11d48',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { font-size: 16px; scroll-behavior: smooth; }
+        @media (min-width: 768px) { html { font-size: 18px; } }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sp-br { display: block; }
+        .pc-br { display: none; }
+        @media (min-width: 768px) {
+            .sp-br { display: none; }
+            .pc-br { display: block; }
+        }
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(45deg);
+            animation: shine 3s infinite cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        @keyframes shine {
+            0% { left: -60%; }
+            100% { left: 150%; }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-[#fffdfa] leading-relaxed antialiased">
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-b from-brand-100 via-white to-brand-50 pt-16 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-brand-200 via-transparent to-transparent"></div>
+            <!-- サブカラーのピンクをアクセントに -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-pink-100 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto text-center mt-8">
+            <p class="text-brand-600 font-bold tracking-widest text-sm sm:text-base mb-4 fade-in-up">人生再発見ラボ</p>
+            
+            <p class="font-serif text-lg sm:text-xl font-bold text-slate-600 mb-4 fade-in-up" style="transition-delay: 0.1s;">
+                頑張っているのに売れないのは、あなたの努力が足りないからじゃない
+            </p>
+            
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 fade-in-up" style="transition-delay: 0.2s; line-height: 1.5;">
+                <span class="text-brand-600 border-b-2 border-brand-300">「導線のズレ」</span>と「視座のズレ」
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-700 font-medium mb-10 fade-in-up leading-loose" style="transition-delay: 0.3s;">
+                整えれば――<span class="text-pink-500 font-bold text-xl">現実は自然に動き出します</span>
+            </p>
+
+            <!-- 動画セクション -->
+            <div class="w-full max-w-2xl mx-auto mb-10 fade-in-up" style="transition-delay: 0.4s;">
+                <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-black aspect-video relative">
+                    <!-- ※テスト用動画です -->
+                    <video id="main-video" controls controlsList="nodownload" class="w-full h-full object-cover" playsinline>
+                        <source src="売れる導線設計B01_260504a01-low1.mp4" type="video/mp4">
+                        お使いのブラウザは動画の再生に対応していません。
+                    </video>
+                </div>
+                <p class="text-sm text-brand-600 mt-4 text-center font-bold">※音声が出ます。再生ボタンを押してご覧ください。</p>
+            </div>
+
+            <!-- つづきを見るボタン (初期非表示・動画再生3秒後に表示) -->
+            <div id="continue-btn-container" class="hidden mb-10 fade-in-up">
+                <button id="show-more-btn" class="btn-shine inline-flex items-center justify-center w-full sm:w-auto bg-gradient-to-r from-brand-300 to-brand-500 text-slate-900 font-bold text-lg sm:text-xl py-4 px-10 rounded-full shadow-[0_10px_25px_-5px_rgba(245,158,11,0.4)] transform transition hover:-translate-y-1 hover:shadow-xl">
+                    つづきを詳しくみる <i class="fa-solid fa-chevron-down ml-2 animate-bounce"></i>
+                </button>
+            </div>
+
+            <!-- ここから下を初期非表示にするラッパー1（ヘッダー内） -->
+            <div id="hidden-header-content" class="hidden">
+                <div class="fade-in-up mb-12" style="transition-delay: 0.2s;">
+                    <a href="https://my75p.com/p/r/l6oSm3jl" class="btn-shine inline-block w-full sm:w-auto bg-gradient-to-r from-brand-300 to-brand-500 text-slate-900 font-bold text-lg sm:text-xl py-5 px-10 rounded-full shadow-[0_10px_25px_-5px_rgba(245,158,11,0.4)] transform transition hover:-translate-y-1 hover:shadow-xl">
+                        【無料】個別相談はこちら <i class="fa-solid fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ここから下を初期非表示にするラッパー2（メインコンテンツ全体） -->
+    <div id="hidden-main-content" class="hidden">
+    
+        <!-- Empathy Section -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-center font-serif text-2xl sm:text-3xl font-bold text-brand-600 mb-10 fade-in-up">
+                    こんな状態になっていませんか？
+                </h2>
+
+                <div class="bg-brand-50 rounded-2xl p-6 sm:p-10 border border-brand-100 shadow-sm fade-in-up" style="transition-delay: 0.1s;">
+                    <ul class="space-y-4 text-base sm:text-lg text-slate-700 font-medium">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-brand-500 mt-1.5 mr-3 text-xl"></i>
+                            <span>何をしたらいいか分からない</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-brand-500 mt-1.5 mr-3 text-xl"></i>
+                            <span>SNS投稿が止まっている</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-brand-500 mt-1.5 mr-3 text-xl"></i>
+                            <span>頑張っているのに売れない</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-brand-500 mt-1.5 mr-3 text-xl"></i>
+                            <span>導線がよく分からない</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-brand-500 mt-1.5 mr-3 text-xl"></i>
+                            <span>自信がなくて動けない</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 text-center fade-in-up" style="transition-delay: 0.2s;">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-6">「やり方が足りない」ではないんです</h3>
+                    <p class="text-lg sm:text-xl text-slate-700 leading-loose">
+                        多くの人は「やり方が足りない」と思っています。でも実は違います。<br><br>
+                        本当の原因は――<br>
+                        <strong class="text-brand-600 border-b-2 border-brand-300">“導線のズレ”と“自分の状態(視座)のズレ”</strong>です。<br><br>
+                        だから必要なのは、正しい導線設計と、自分の状態(視座)の調整。この2つを同時に整えること。それによって、頑張らなくても自然に売れる状態が生まれます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section 1 -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-50 relative overflow-hidden">
+            <div class="max-w-3xl mx-auto relative z-10">
+                <h2 class="text-center font-serif text-2xl sm:text-3xl font-bold text-slate-800 mb-10 fade-in-up">
+                    私も同じように悩みました
+                </h2>
+                
+                <div class="bg-white p-8 sm:p-10 rounded-2xl shadow-sm border border-brand-100 fade-in-up" style="transition-delay: 0.1s;">
+                    <p class="text-base sm:text-lg leading-loose text-slate-700">
+                        もともと私は、営業の仕事をしていました。<br>
+                        ですが、今の会社に創業メンバーとして関わったとき、最大の課題は「集客」でした。<br><br>
+                        正直に言うと―――まったくうまくいかなかったんです。<br>
+                        何をやっても反応がなくて「どうすればいいのか分からない」そんな状態でした。<br><br>
+                        だから私は、マーケティングを徹底的に学びました。<br>
+                        心理学、NLP、ビジネス書、そして量子力学的な考え方まで。300冊以上を読み実践し続けました。<br><br>
+                        その中で気づいたのは――<br>
+                        <strong class="text-brand-600">・誰の役に立つのか</strong><br>
+                        <strong class="text-brand-600">・何を届けるのか</strong><br>
+                        <strong class="text-brand-600">・どうやって出会うのか</strong><br><br>
+                        この<strong class="text-brand-600 text-xl border-b-2 border-pink-300">「導線」がすべて</strong>だということでした。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section 2 -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <!-- Episode 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-center fade-in-up">
+                        <div class="md:w-1/3 shrink-0">
+                            <!-- ※画像はゴールド系のプレースホルダーを入れています -->
+                            <img src="RyoushiDousen_Scene1_A-SQ_a01.png" alt="イメージ" class="rounded-xl w-full object-cover shadow-sm">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-xl font-bold text-brand-600 mb-4">「どうやって申し込めばいいですか？」</h3>
+                            <p class="text-slate-700 leading-relaxed">
+                                学んだことをすべて実践し続けた結果。ある日、お客様からこう言われたんです。<br><br>
+                                「どうやって申し込めばいいですか？」<br><br>
+                                その瞬間「あ、流れができた」と確信しました。<br>
+                                そこからは、無理に売ることなく、自然に申し込みが入るようになり、2日間で220万円の売上を作ることもできました。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Episode 2 -->
+                    <div class="bg-gradient-to-br from-brand-50 to-white p-8 rounded-2xl border border-brand-100 shadow-sm fade-in-up mt-8 text-center">
+                        <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
+                            これは、特別な才能ではありません。<br><br>
+                            <strong class="text-2xl text-brand-600">「導線」と「見方」を整えただけ</strong>です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile & Message Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 fade-in-up">
+                    <p class="text-brand-500 font-bold tracking-widest text-sm mb-2">MESSAGE</p>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 leading-tight">
+                        私がサービスに込めた想い
+                    </h2>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start gap-10">
+                    <div class="w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden shadow-lg border-4 border-white shrink-0 mx-auto md:mx-0 fade-in-up">
+                        <img src="RyoushiDousen_SatoshiK_A-YOKO_a01.png" alt="金子さとし" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="text-center md:text-left fade-in-up" style="transition-delay: 0.1s;">
+                        <p class="font-serif text-xl sm:text-2xl font-bold text-brand-600 mb-6 leading-relaxed">
+                            「頑張っているのに報われない女性起業家さんの手を、止めたままにしたくない」
+                        </p>
+                        <p class="text-slate-700 leading-loose mb-6">
+                            サービスへの想いはある。人の役に立ちたい気持ちもある。けれど、何を発信すればいいのか、どこに向かえばいいのか分からず、手が止まってしまう。<br>
+                            そんな方を、私はこれまで何度も見てきました。
+                        </p>
+                        <p class="text-slate-700 leading-loose mb-6">
+                            でも、それは才能がないからでも、努力が足りないからでもありません。ただ、想いを必要な人へ届けるための<strong class="text-slate-900 border-b border-pink-300">“流れ”が整っていないだけ</strong>なのです。
+                        </p>
+                        <p class="text-slate-700 leading-loose mb-6">
+                            私自身も、集客に悩み、何をしてもうまくいかない時期がありました。だからこそ分かります。「何をすればいいか分からない」状態は、とても苦しい。
+                        </p>
+                        <p class="text-slate-700 leading-loose mb-8">
+                            だから私は、ただアドバイスをするのではなく、あなたの想いやサービスを丁寧にヒアリングしながら、<strong class="text-brand-600">必要な人に届く導線を一緒に形にしていきます。</strong><br>
+                            頑張り続けるのではなく、あなたらしさが自然に伝わり、必要な人から「お願いしたい」と言われる状態へ。そのための土台を、心を込めて一緒につくります。
+                        </p>
+                        <p class="text-sm text-slate-500">
+                            人生再発見ラボ・代表<br>
+                            <strong class="text-lg text-brand-600">金子 さとし</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offer Section -->
+        <section id="offer" class="py-20 px-4 sm:px-6 lg:px-8 bg-white text-center relative">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-800 mb-8 fade-in-up">
+                    ご案内するサービス
+                </h2>
+                
+                <div class="bg-brand-50 p-8 sm:p-12 rounded-3xl shadow-sm border border-brand-100 fade-in-up mb-12" style="transition-delay: 0.1s;">
+                    <p class="text-brand-600 font-bold mb-2">量子導線プロデュース</p>
+                    <h3 class="text-2xl sm:text-3xl text-brand-600 font-bold mb-8">『頑張らなくても売れる導線設計』</h3>
+                    
+                    <p class="text-slate-700 leading-loose text-lg font-medium">
+                        コンセプト設計 / SNS導線設計 / 投稿ネタ作成 / 動画台本作成 / LP構成作成 / 説明会設計 / 個別相談導線設計<br><br>
+                        <strong class="text-2xl text-slate-900 border-b-2 border-pink-300">......全部、作ります。</strong>
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section class="py-10 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16 fade-in-up">
+                    <p class="text-brand-500 font-bold tracking-widest text-sm mb-2">SUPPORT FLOW</p>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-800">全部作るから、毎日やることが明確になる</h2>
+                    <p class="mt-4 text-slate-600 leading-loose">
+                        集客から売上までの流れを一貫して構築します。
+                    </p>
+                </div>
+
+                <div class="relative border-l-2 border-brand-200 ml-4 sm:ml-0 md:ml-8 space-y-12">
+                    <div class="relative pl-8 sm:pl-10 fade-in-up">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brand-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">1</div>
+                        <h3 class="text-xl font-bold text-brand-600 mb-2">コンセプト設計 ＆ SNS導線設計</h3>
+                        <div class="bg-brand-50 p-5 rounded-lg border border-brand-100">
+                            <p class="text-slate-700 leading-relaxed">まずはあなたの強みと想いを整理し、誰に何を届けるのかを明確にします。そして、ターゲットに最も響くSNSの導線を設計します。</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 sm:pl-10 fade-in-up">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brand-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">2</div>
+                        <h3 class="text-xl font-bold text-brand-600 mb-2">投稿ネタ作成 ＆ 動画台本作成</h3>
+                        <div class="bg-brand-50 p-5 rounded-lg border border-brand-100">
+                            <p class="text-slate-700 leading-relaxed">「何を発信すればいいか分からない」を解消するため、具体的な投稿ネタや、反応が取れる動画の台本まで作成します。</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 sm:pl-10 fade-in-up">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brand-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">3</div>
+                        <h3 class="text-xl font-bold text-brand-600 mb-2">LP構成作成</h3>
+                        <div class="bg-brand-50 p-5 rounded-lg border border-brand-100">
+                            <p class="text-slate-700 leading-relaxed">あなたのサービスの魅力がしっかり伝わり、お申し込みへと繋がるランディングページ（LP）の構成を作り上げます。</p>
+                        </div>
+                    </div>
+
+                    <!-- 最後のステップはアクセントのピンクを適用 -->
+                    <div class="relative pl-8 sm:pl-10 fade-in-up">
+                        <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-pink-400 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm"><i class="fa-solid fa-star text-[10px]"></i></div>
+                        <h3 class="text-xl font-bold text-pink-500 mb-2">説明会設計 ＆ 個別相談導線設計</h3>
+                        <div class="bg-gradient-to-r from-pink-50/80 to-pink-100/50 p-5 rounded-lg border border-pink-200">
+                            <p class="text-slate-700 leading-relaxed">最後は、無理なく自然に「お願いしたい」と言われるための、説明会や個別相談の進行・導線を完成させます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-white border-2 border-brand-100 rounded-2xl p-8 text-center shadow-lg fade-in-up">
+                    <p class="text-xl sm:text-2xl font-serif font-bold text-slate-800 leading-loose">
+                        この導線を整えることで――<br><br>
+                        <span class="text-slate-500 line-through">何をしたらいいか分からない状態から</span><br>
+                        <i class="fa-solid fa-arrow-down text-brand-400 my-2"></i><br>
+                        <strong class="text-brand-600 text-xl sm:text-2xl">毎日やることに迷わず、自然に集客でき、<br>無理せず売上が発生する状態へ</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Section -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-brand-50">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-md border-t-8 border-brand-400 fade-in-up">
+                    
+                    <h2 class="text-center font-serif text-xl sm:text-2xl font-bold text-slate-800 mb-4">
+                        【無料】頑張らなくても売れる<br class="sp-br">導線設計 説明会＆個別相談会
+                    </h2>
+                    <p class="text-center text-slate-600 mb-8 border-b-2 border-brand-100 pb-6">
+                        現在、一人ひとりの導線をしっかり作るため、<strong class="text-brand-600">人数限定</strong>でご案内しています。ご希望の方は、まずは無料個別相談にお越しください。
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10 text-lg text-slate-700 font-medium">
+                        <li class="flex border-b border-dashed border-slate-200 pb-3"><span class="w-24 text-brand-600 font-bold">参加費</span> <span>無料</span></li>
+                        <li class="flex border-b border-dashed border-slate-200 pb-3"><span class="w-24 text-brand-600 font-bold">形式</span> <span>オンライン (Zoom)・対面(@池袋の弊社)</span></li>
+                        <li class="flex border-b border-dashed border-slate-200 pb-3"><span class="w-24 text-brand-600 font-bold">所要時間</span> <span>約90分</span></li>
+                    </ul>
+
+                    <div class="bg-brand-50 p-6 rounded-xl mb-8">
+                        <h3 class="font-bold text-brand-600 mb-4">こんな方におすすめです。</h3>
+                        <ul class="space-y-2 text-slate-700">
+                            <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>自分に何か足りないと感じている方</li>
+                            <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>頑張っているのにうまくいかない方</li>
+                            <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>もっと自然に、自分らしいビジネスをしたい方</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-center text-slate-600 leading-relaxed mb-8">
+                        少しでも「気になる」と感じた方は、<br class="sp-br">その感覚を大切にしてみてください。<br>
+                        それが変わるきっかけになるかもしれません。
+                    </p>
+
+                    <div class="text-center">
+                        <a href="https://my75p.com/p/r/l6oSm3jl" class="btn-shine inline-block w-full sm:w-auto bg-gradient-to-r from-brand-300 to-brand-500 text-slate-900 font-bold text-lg sm:text-xl py-5 px-10 rounded-full shadow-[0_10px_25px_-5px_rgba(245,158,11,0.4)] transform transition hover:-translate-y-1 hover:shadow-xl">
+                            【無料】個別相談はこちら <i class="fa-solid fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10 fade-in-up">
+                    <p class="text-brand-500 font-bold tracking-widest text-sm mb-2">FAQ</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800">よくあるご質問</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <!-- Qの部分にアクセントのピンクを適用 -->
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            まだサービスがうまくまとまっていないのですが、相談できますか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            はい、大丈夫です。むしろ、まだ言葉になりきっていない想いや強みを整理するところから一緒に進めていきます。
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            SNS投稿が苦手でも大丈夫ですか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            大丈夫です。このサービスでは、何を投稿すればいいか分からない状態から、投稿の方向性やネタまで一緒に整えていきます。
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            パソコンやITが苦手でも大丈夫ですか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            はい、ご安心ください。必要な仕組みや導線は、分かりやすく整理しながら進めます。難しい専門用語で置いていくことはありません。
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            どんな業種でも相談できますか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            基本的には、レイキ・ヒーリング・カウンセリング・健康ケア系の講座・セッション・薬膳など、女性向けサービスや個人の想いを届ける仕事をされている方に特に相性が良いです。
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            何を作ってもらえるのですか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            コンセプト設計、SNS導線、投稿ネタ、動画台本、LP構成、説明会設計、個別相談導線など、集客から申し込みまでの流れを整えていきます。
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            自分で全部できるようになる必要がありますか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            最初から全部できる必要はありません。まずは導線設計をこちらで形にし、その後、少しずつご自身でも運用できる状態を目指します。
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            無料相談では何をしますか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            現在のサービス内容やお悩みをお聞きし、どこで手が止まっているのか、どんな導線が必要かを一緒に整理します。無理におすすめすることはありません。
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-50 rounded-xl shadow-sm border border-brand-100 p-6 fade-in-up">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex gap-3 mb-3">
+                            <span class="text-pink-500 font-serif text-xl">Q.</span>
+                            まだ申し込むか分からなくても、無料相談して大丈夫ですか？
+                        </h3>
+                        <p class="text-slate-700 pl-8 leading-relaxed flex gap-3 text-sm sm:text-base">
+                            <span class="text-brand-600 font-serif font-bold text-xl -ml-8">A.</span>
+                            はい、大丈夫です。「まずは自分に必要か知りたい」という方も安心してご相談ください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Access Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 fade-in-up">
+                    <p class="text-brand-500 font-bold tracking-widest text-sm mb-2">ACCESS</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-8">アクセス</h2>
+                    
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-3">人生再発見ラボ</h3>
+                    <p class="text-sm text-slate-500 mb-2">(運営:株式会社オールサポートセンター)</p>
+                    <p class="text-slate-700 mb-4">〒170-0013 東京都豊島区東池袋1-35-8</p>
+                    <p class="text-brand-600 font-bold bg-white inline-block px-5 py-2 rounded-full text-sm sm:text-base border border-brand-100 shadow-sm">「池袋駅東口」より徒歩5分</p>
+                </div>
+                
+                <!-- Google Map Placeholder -->
+                <div class="rounded-2xl overflow-hidden shadow-md border-4 border-white aspect-square md:aspect-[21/9] fade-in-up bg-[#fef3c7] flex items-center justify-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.93774659104!2d139.7139945152601!3d35.73240218018241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6896263591%3A0xe9f799e03d3ceba2!2z44CSMTcwLTAwMTMg5p2x5Lqs6YO96LGK5bO25Yy65p2x5rGg6KKLMeS4geebrjM1LTg!5e0!3m2!1sja!2sjp!4v1680000000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section (Closing) -->
+        <section id="cta" class="py-20 px-4 sm:px-6 lg:px-8 bg-white text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-600 mb-8 fade-in-up">
+                    もう、“何をすればいいか分からない”を終わりにしませんか？
+                </h2>
+                
+                <p class="text-slate-700 text-lg leading-loose mb-10 fade-in-up" style="transition-delay: 0.1s;">
+                    導線と視座を整えれば、現実は動きます。<br>
+                    一緒に“自然に売れる状態”をつくりましょう。
+                </p>
+
+                <div class="fade-in-up mb-16" style="transition-delay: 0.2s;">
+                    <a href="https://my75p.com/p/r/l6oSm3jl" class="btn-shine inline-block w-full sm:w-auto bg-gradient-to-r from-brand-300 to-brand-500 text-slate-900 font-bold text-xl py-5 px-12 rounded-full shadow-[0_10px_25px_-5px_rgba(245,158,11,0.4)] transform transition hover:-translate-y-1 hover:shadow-xl">
+                        【無料】個別相談はこちら <i class="fa-solid fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- メールレター案内 -->
+                <div class="pt-12 border-t border-brand-100 fade-in-up" style="transition-delay: 0.3s;">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">ゆっくり知りたい方へ</h3>
+                    <p class="text-slate-600 leading-loose mb-6">
+                        今すぐ参加はしないけれど、もう少し知りたい方へ。<br>
+                        メールで「頑張らなくても売れる導線設計」のヒントをお届けしています。<br>
+                        ご興味のある方は、こちらからご登録ください。
+                    </p>
+                    <a href="https://my75p.com/p/r/sW25ayFv" class="inline-block text-brand-600 font-bold hover:text-brand-700 transition-colors border-b-2 border-brand-200 hover:border-brand-500 pb-1">
+                        【無料】メールレターご登録はこちら <i class="fa-solid fa-envelope ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center bg-brand-50 text-brand-500 text-sm border-t border-brand-100">
+        <p>&copy; 人生再発見ラボ All Rights Reserved.</p>
+    </footer>
+
+    <!-- フローティングCTAボタン -->
+    <div id="floating-cta" class="fixed bottom-0 left-0 w-full p-4 bg-white/95 backdrop-blur-md border-t border-brand-100 shadow-[0_-10px_15px_-3px_rgba(245,158,11,0.1)] z-50 transform translate-y-full transition-transform duration-300 ease-in-out">
+        <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm font-bold text-slate-800 hidden sm:block">
+                導線と視座を整えれば、現実は動きます。<br><span class="text-brand-600 text-xs">一緒に“自然に売れる状態”をつくりましょう。</span>
+            </p>
+            <a href="https://my75p.com/p/r/l6oSm3jl" class="btn-shine w-full sm:w-auto text-center bg-gradient-to-r from-brand-300 to-brand-500 text-slate-900 font-bold text-base sm:text-lg py-3 px-8 rounded-full shadow-lg">
+                【無料】個別相談はこちら <i class="fa-solid fa-chevron-right ml-1 text-sm"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(element => { observer.observe(element); });
+
+            const floatingCta = document.getElementById('floating-cta');
+            const heroSection = document.querySelector('header');
+            const footerSection = document.getElementById('cta');
+
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                const footerTop = footerSection ? footerSection.offsetTop : document.body.scrollHeight;
+                const windowHeight = window.innerHeight;
+                
+                if (scrollY > heroBottom - 100 && scrollY + windowHeight < footerTop + 200) {
+                    floatingCta.classList.remove('translate-y-full');
+                } else {
+                    floatingCta.classList.add('translate-y-full');
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if(href !== "#") {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) { target.scrollIntoView({ behavior: 'smooth' }); }
+                    }
+                });
+            });
+
+            const video = document.getElementById('main-video');
+            const continueBtnContainer = document.getElementById('continue-btn-container');
+            const showMoreBtn = document.getElementById('show-more-btn');
+            const hiddenHeaderContent = document.getElementById('hidden-header-content');
+            const hiddenMainContent = document.getElementById('hidden-main-content');
+            
+            let isButtonShown = false;
+
+            if (video && continueBtnContainer) {
+                // プレビュー確認用: 再生から3秒でボタンを表示します
+                video.addEventListener('timeupdate', () => {
+                    if (!isButtonShown && video.currentTime >= 88) {
+                        continueBtnContainer.classList.remove('hidden');
+                        setTimeout(() => { continueBtnContainer.classList.add('is-visible'); }, 50);
+                        isButtonShown = true;
+                    }
+                });
+            }
+
+            if (showMoreBtn) {
+                showMoreBtn.addEventListener('click', () => {
+                    continueBtnContainer.classList.add('hidden');
+                    hiddenHeaderContent.classList.remove('hidden');
+                    hiddenMainContent.classList.remove('hidden');
+
+                    setTimeout(() => {
+                        hiddenHeaderContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        document.querySelectorAll('.fade-in-up:not(.is-visible)').forEach(element => {
+                            observer.observe(element);
+                        });
+                    }, 100);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
