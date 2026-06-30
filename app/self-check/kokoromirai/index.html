@@ -1,0 +1,137 @@
+const resultMap = {
+      A: {
+        message: "『過去・感情・心の癖』に今のお悩みの奥にあるかもしれません",
+        method: "心の浄化"
+      },
+      B: {
+        message: "『エネルギー不足・整っていないこと』に今のお悩みの奥にあるかもしれません",
+        method: "レイキヒーリング"
+      },
+      C: {
+        message: "『現実の捉え方・未来の描き方』に今のお悩みの奥にあるかもしれません",
+        method: "量子力学生活"
+      },
+      AB: {
+        message: "『過去・感情・心の癖』『エネルギー不足・整っていないこと』に今のお悩みの奥にあるかもしれません",
+        method: "心の浄化とレイキヒーリング"
+      },
+      AC: {
+        message: "『過去・感情・心の癖』『現実の捉え方・未来の描き方』に今のお悩みの奥にあるかもしれません",
+        method: "心の浄化と量子力学生活"
+      },
+      BC: {
+        message: "『エネルギー不足・整っていないこと』『現実の捉え方・未来の描き方』に今のお悩みの奥にあるかもしれません",
+        method: "レイキヒーリングと量子力学生活"
+      },
+      ABC: {
+        message: "『過去・感情・心の癖』『エネルギー不足・整っていないこと』『現実の捉え方・未来の描き方』に今のお悩みの奥にあるかもしれません",
+        method: "心の浄化とレイキヒーリングと量子力学生活"
+      },
+      NONE: {
+        message: "今回は5個以上当てはまる項目がありませんでした。今は大きく偏った原因よりも、日々の状態をやさしく観察するタイミングかもしれません",
+        method: "セルフケアの見直し"
+      }
+    };
+
+    const state = {
+      order: [],
+      index: 0,
+      scores: { A: 0, B: 0, C: 0 },
+      resultKey: "NONE"
+    };
+
+    const screens = {
+      start: document.getElementById("startScreen"),
+      question: document.getElementById("questionScreen"),
+      result: document.getElementById("resultScreen"),
+      method: document.getElementById("methodScreen")
+    };
+
+    const questionText = document.getElementById("questionText");
+    const progressText = document.getElementById("progressText");
+    const answeredText = document.getElementById("answeredText");
+    const progressBar = document.getElementById("progressBar");
+    const resultMessage = document.getElementById("resultMessage");
+    const scoreA = document.getElementById("scoreA");
+    const scoreB = document.getElementById("scoreB");
+    const scoreC = document.getElementById("scoreC");
+    const methodName = document.getElementById("methodName");
+    const detailLink = document.getElementById("detailLink");
+
+    function shuffle(items) {
+      const shuffled = [...items];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    function showScreen(name) {
+      Object.values(screens).forEach((screen) => screen.classList.remove("active"));
+      screens[name].classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function startDiagnosis() {
+      state.order = shuffle(questions);
+      state.index = 0;
+      state.scores = { A: 0, B: 0, C: 0 };
+      state.resultKey = "NONE";
+      showScreen("question");
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const current = state.order[state.index];
+      const currentNumber = state.index + 1;
+      questionText.textContent = current.text;
+      progressText.textContent = `${currentNumber} / ${state.order.length}`;
+      answeredText.textContent = `回答済み ${state.index}問`;
+      progressBar.style.width = `${(state.index / state.order.length) * 100}%`;
+    }
+
+    function answerQuestion(answer) {
+      const current = state.order[state.index];
+      if (answer === "yes") {
+        state.scores[current.group] += 1;
+      }
+
+      state.index += 1;
+      if (state.index >= state.order.length) {
+        progressBar.style.width = "100%";
+        renderResult();
+        return;
+      }
+
+      renderQuestion();
+    }
+
+    function getResultKey() {
+      return ["A", "B", "C"].filter((group) => state.scores[group] >= 5).join("") || "NONE";
+    }
+
+    function renderResult() {
+      state.resultKey = getResultKey();
+      const result = resultMap[state.resultKey];
+      resultMessage.textContent = result.message;
+      scoreA.textContent = `${state.scores.A}個`;
+      scoreB.textContent = `${state.scores.B}個`;
+      scoreC.textContent = `${state.scores.C}個`;
+      methodName.textContent = result.method;
+      detailLink.href = DETAIL_URLS[state.resultKey] || DETAIL_URLS.NONE;
+      showScreen("result");
+    }
+
+    document.getElementById("startButton").addEventListener("click", startDiagnosis);
+    document.getElementById("retryButton").addEventListener("click", startDiagnosis);
+    document.getElementById("retryButton2").addEventListener("click", startDiagnosis);
+    document.getElementById("showMethodButton").addEventListener("click", () => showScreen("method"));
+    document.getElementById("backToResultButton").addEventListener("click", () => showScreen("result"));
+
+    document.querySelectorAll("[data-answer]").forEach((button) => {
+      button.addEventListener("click", () => answerQuestion(button.dataset.answer));
+    });
+  </script>
+</body>
+</html>
